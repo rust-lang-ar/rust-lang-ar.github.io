@@ -1,2 +1,1 @@
-# rustargentina.github.io
-Argentina's Rust Community Site
+# Sitio de la Comunidad Argentina de Rust
