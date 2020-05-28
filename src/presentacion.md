@@ -15,3 +15,5 @@ El sitio en Meetup punto com de la comunidad es: [Rust-Argentina](https://www.me
 También tenemos un  un canal en [Telegram](https://t.me/joinchat/CJDlkxDxMmQSVkY-UrEpjg).
 
 Agradecemos a [LambdaClass S.R.L.](https://lambdaclass.com/) por su apoyo a la comunidad.
+
+Este sitio fue generado con [mdBook](https://rust-lang.github.io/mdBook/)
