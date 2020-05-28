@@ -1,11 +1,8 @@
 # Presentación
 
-<!-- <center>
-
-![Logo de la Comunidad Argentina de Rust][logo]
-
+<center>
+	<img alt="Logo" src="https://raw.githubusercontent.com/RustArgentina/RustArgentina.github.io/development/src/img/logo.jpeg"/>
 </center>
- -->
 
 La comunidad de Rust en Argentina es pequeña pero creciente.
 
@@ -17,4 +14,4 @@ El sitio en Meetup punto com de la comunidad es: [Rust-Argentina](https://www.me
 
 También tenemos un  un canal en [Telegram](https://t.me/joinchat/CJDlkxDxMmQSVkY-UrEpjg).
 
-logo: https://github.com/RustArgentina/rustargentina.github.io/raw/master/src/img/logo.jpeg
+Agradecemos a [LambdaClass S.R.L.](https://lambdaclass.com/) por su apoyo a la comunidad.
