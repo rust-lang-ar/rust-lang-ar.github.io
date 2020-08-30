@@ -1,7 +1,7 @@
 # Presentación
 
 <center>
-	<img alt="Logo" src="https://raw.githubusercontent.com/RustArgentina/RustArgentina.github.io/development/src/img/logo.jpeg"/>
+	<img alt="Logo" src="https://raw.githubusercontent.com/rust-lang-ar/rust-lang-ar.github.io/development/src/img/logo.jpeg"/>
 </center>
 
 La comunidad de Rust en Argentina es pequeña pero creciente.
