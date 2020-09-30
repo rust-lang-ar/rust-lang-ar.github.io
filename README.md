@@ -1,13 +1,28 @@
-# Sitio de la Comunidad Argentina de Rust
+# rust-lang-ar.github.io
+Rust Argentina's GitHub Page
 
-Para contribuir al sitio:
-- Crear un fork
-- Editar o crear archivos markdown en la carpeta `./src`
-- Commitear y pushear a tu fork.
-- Crear un pull request contra `development` de `https://github.com/rust-lang-ar/rust-lang-ar.github.io`. Es importante que sea contra esta branch y no otra.
+## Development
 
-## Notas
+### Setup
 
-Github Pages, en el caso de un sitio de usuario o de organización, fuerza a que el contenido estático del sitio a deployar este en la carpeta raíz de la branch master (en el caso de sitios de proyectos, puede estar en la branch `gh-pages` o en la carpeta `./docs` de la branch `master`).
+The following crates are required to work with this project
 
-Por esta razón, los archivos fuente del sitio están en la branch `development`, y el Github Action workflow configurado en `.github/workflow/gh-pages.yml` se encarga de preparar un entorno en el cual se puede correr `mdbook` para generar el sitio estático y commitear y pushear ese contenido a la branch `master`.
+- **wasm-pack**: Compiles Rust to WASM generating a JavaScript interop
+- **cargo-watch**: Watch FS events for changes and rebuilds your project
+- **simple-http-server**: HTTP Server to serve project assets
+
+```bash
+# installing crates using cargo
+cargo install wasm-pack
+cargo install cargo-watch
+cargo install simple-http-server
+```
+
+### Source
+
+To run the _development server_ execute the `dev.sh` script available in the `bin/` directory
+of the project.
+
+```bash
+bash ./bin/dev.sh
+```
