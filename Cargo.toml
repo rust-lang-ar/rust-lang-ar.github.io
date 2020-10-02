@@ -1,5 +1,5 @@
 [package]
-name = "ruat-lang-ar-github-io"
+name = "rust-lang-ar-github-io"
 version = "0.1.0"
 authors = ["Esteban Borai <estebanborai@gmail.com>"]
 edition = "2018"
