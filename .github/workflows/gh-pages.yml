@@ -1,28 +1,26 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: github-pages
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
-    branches: [development]
+    branches:
+      - development
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  deploy:
     # The type of runner that the job will run on
-    runs-on: ubuntu-18.04 # not latest because peaceiris/actions-gh-pages@v3 requires this version
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Not latest because peaceiris/actions-gh-pages@v3 requires this version
+    runs-on: ubuntu-18.04 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1.1.11
+        uses: peaceiris/actions-mdbook@v1
         with:
           mdbook-version: 'latest'
 
