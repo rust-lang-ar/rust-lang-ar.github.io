@@ -1,4 +1,4 @@
-import './src/style.scss';
+import './style.css';
 
 import('./pkg').then((mod) => {
   mod.run_app();

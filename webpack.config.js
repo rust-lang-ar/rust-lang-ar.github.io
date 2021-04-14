@@ -9,9 +9,12 @@ module.exports = (_, argv) => {
     devServer: {
       contentBase: distPath,
       compress: argv.mode === 'production',
-      port: 8000
+      port: 8000,
     },
     entry: './bootstrap.js',
+    experiments: {
+      syncWebAssembly: true
+    },
     output: {
       path: distPath,
       filename: 'website.js',
@@ -20,13 +23,13 @@ module.exports = (_, argv) => {
     module: {
       rules: [
         {
-          test: /\.s[ac]ss$/i,
-          use: [
-            'style-loader',
-            'css-loader',
-            'sass-loader',
-          ],
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader', 'postcss-loader'],
         },
+        {
+          test: /\.wasm$/,
+          type: 'webassembly/sync',
+        }
       ],
     },
     plugins: [
