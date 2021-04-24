@@ -23,7 +23,7 @@ impl Component for App {
 
     fn view(&self) -> Html {
         html! {
-          <div class="bg-background">
+          <div class="bg-general">
             <Header />
           <figure class="bg-gray-100 rounded-xl p-8">
               <img class="w-32 h-32 rounded-full" src="https://avatars.githubusercontent.com/u/19656993?v=4" alt="" width="384" height="512" />

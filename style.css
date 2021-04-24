@@ -5,5 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
 .bg-general{
-    background: url("./dist/inspiration-geometry.png"), #F4A55D;
+    background: url('https://i.imgur.com/tLt6Zo6.png'), #F4A55D;
+    min-height: 100vh;
 }
