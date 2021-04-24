@@ -1,4 +1,5 @@
 use yew::prelude::*;
+use crate::components::{header::Header};
 
 pub struct App {}
 
@@ -22,8 +23,9 @@ impl Component for App {
 
     fn view(&self) -> Html {
         html! {
-          <div>
-            <figure class="bg-gray-100 rounded-xl p-8">
+          <div class="bg-background">
+            <Header />
+          <figure class="bg-gray-100 rounded-xl p-8">
               <img class="w-32 h-32 rounded-full" src="https://avatars.githubusercontent.com/u/19656993?v=4" alt="" width="384" height="512" />
               <div class="pt-6 space-y-4">
                 <blockquote>
