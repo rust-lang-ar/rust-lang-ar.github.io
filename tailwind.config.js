@@ -11,7 +11,8 @@ module.exports = {
         header: "#E8C64E"
       },
       fontFamily:{
-        header: ['Ubuntu', 'sans-serif'],
+        playfair: ["Playfair Display"],
+        lato: ["Lato"],
       },
     },
   },

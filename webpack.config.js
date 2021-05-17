@@ -19,10 +19,20 @@ module.exports = (_, argv) => {
     output: {
       path: distPath,
       filename: 'website.js',
-      webassemblyModuleFilename: 'website.wasm'
+      webassemblyModuleFilename: 'website.wasm',
+      assetModuleFilename: 'images/[hash][ext][query]'
     },
     module: {
       rules: [
+        {
+          test: /\.svg/,
+          type: 'asset',
+          
+        },
+        {
+          test: /\.(png|jpg|gif)/,
+          type: 'asset/resource'
+        },
         {
           test: /\.css$/i,
           use: [
@@ -42,6 +52,8 @@ module.exports = (_, argv) => {
       new CopyWebpackPlugin({
         patterns: [
           { from: './static', to: distPath },
+          { from: './src/img', to: distPath+'/images' },
+          { from: './static', to: distPath+'/images' },
         ],
       }),
       new WasmPackPlugin({
