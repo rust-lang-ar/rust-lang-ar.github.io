@@ -1,8 +1,7 @@
-use yew::{html, Component, ComponentLink, Html, Properties, ShouldRender};
+use yew::{html, Component, ComponentLink, Html, ShouldRender};
 use yew::services::fetch::{FetchService, FetchTask, Request, Response};
-use super::{project_card::{Lang, ProjectCard}};
+use super::{project_card::{ProjectCard}};
 use yew::services::ConsoleService;
-use std::rc::Rc;
 use yew::format::Nothing;
 use anyhow::Error;
 use serde::Deserialize;
@@ -13,7 +12,7 @@ const GITHUB_REPOS_URL: &str = "https://api.github.com/orgs/rust-lang-ar/repos";
 pub struct OurProjects {
     is_fetching: bool,
     fetch_failed: bool,
-    fetch_task: Option<FetchTask>,
+    _fetch_task: Option<FetchTask>,
     has_repos: bool,
     link: ComponentLink<Self>,
     repositories: Option<Vec<Repository>>,
@@ -37,11 +36,11 @@ impl Component for OurProjects {
     type Message = Msg;
     type Properties = ();
 
-    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
+    fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
         Self {
             is_fetching: false,
             fetch_failed: false,
-            fetch_task: None,
+            _fetch_task: None,
             has_repos: false,
             link,
             repositories: None,
@@ -109,7 +108,7 @@ impl Component for OurProjects {
             let request = Request::get(GITHUB_REPOS_URL).body(Nothing).unwrap();
 
             let task = FetchService::fetch(request, callback).unwrap();
-            self.fetch_task = Some(task);
+            self._fetch_task = Some(task);
         }
     }
 

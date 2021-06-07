@@ -1,6 +1,4 @@
-use std::collections::HashMap;
 use yew::{html, Component, ComponentLink, Html, Properties, ShouldRender};
-use std::rc::Rc;
 
 #[derive(Clone, Copy,PartialEq, Eq, Hash)]
 pub enum Lang {
@@ -90,7 +88,7 @@ impl Component for ProjectCard {
     }
 
     fn view(&self) -> Html {
-        let (class_name, language_text) = self.language.markup_resources();
+        let (_class_name, language_text) = self.language.markup_resources();
 
         html! {
             <a href={self.html_url.clone()} class="h-full">

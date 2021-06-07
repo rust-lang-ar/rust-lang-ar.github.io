@@ -1,4 +1,4 @@
-use yew::{html, Component, ComponentLink, Html, Properties, ShouldRender};
+use yew::{html, Component, ComponentLink, Html, ShouldRender};
 
 pub struct Hero {}
 
@@ -8,7 +8,7 @@ impl Component for Hero {
     type Message = Msg;
     type Properties = ();
 
-    fn create(props: Self::Properties, _: ComponentLink<Self>) -> Self {
+    fn create(_props: Self::Properties, _: ComponentLink<Self>) -> Self {
         Hero { }
     }
 
