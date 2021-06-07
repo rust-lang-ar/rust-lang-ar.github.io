@@ -88,7 +88,7 @@ impl Component for ProjectCard {
     }
 
     fn view(&self) -> Html {
-        let (_class_name, language_text) = self.language.markup_resources();
+        let language_text = self.language.markup_resources().1;
 
         html! {
             <a href={self.html_url.clone()} class="h-full">
