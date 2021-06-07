@@ -24,6 +24,6 @@
     }
 
     .header-logo{
-        @apply text-white rounded-full h-20 md:w-20 top-2 sm:w-full;
+        @apply text-white rounded-full h-20 top-2 sm:w-20;
     }
 }
