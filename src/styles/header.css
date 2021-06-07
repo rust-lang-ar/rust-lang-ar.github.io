@@ -1,0 +1,29 @@
+@layer components {
+    .header{
+        @apply bg-white text-gray-600 filter shadow-md drop-shadow-2xl;
+    }
+    .header-container{
+        @apply container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center;
+    }
+
+    .header-left-side{
+        @apply flex flex-wrap flex-col justify-center items-center text-center sm:h-full md:h-16 text-gray-900;
+    }
+
+    .header-right-side{
+        @apply md:ml-auto text-xl flex flex-wrap items-center text-base justify-center font-lato;
+    }
+
+    .header-nav-item{
+        @apply px-2 sm:px-0 md:mr-7 hover:text-gray-900;
+    }
+
+    .header-title{
+        @apply md:ml-3 text-2xl md:text-4xl font-playfair text-center md:text-justify;
+        min-width: 100%;
+    }
+
+    .header-logo{
+        @apply text-white rounded-full h-20 md:w-20 top-2 sm:w-full;
+    }
+}

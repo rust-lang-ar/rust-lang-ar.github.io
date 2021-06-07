@@ -22,15 +22,15 @@ impl Component for JoinUS {
 
     fn view(&self) -> Html {
         html! {
-            <section class="container flex flex-wrap px-5 py-24 mx-auto items-center">
-                <div class="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200 inline-flex items-end flex-col">
-                    <div class="flex flex-col items-center">
+            <section class="joinus-container">
+                <div class="joinus-left-side">
+                    <div class="joinus-side-container">
                         <img src="fa-brands_meetup.svg" />
                         {"¡Nuestro grupo de meetup!"}
                     </div>
                 </div>
-                <div class="md:w-1/2 md:pl-12 md:py-8 mb-10 md:mb-0 pb-10 inline-flex items-start flex-col">
-                    <div class="flex flex-col items-center">
+                <div class="joinus-right-side">
+                    <div class="joinus-side-container">
                         <img src="fa-brands_telegram.svg" />
                         {"¡Nuestro grupo de Telegram!"}
                     </div>

@@ -6,6 +6,14 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    borderColor: theme => ({
+      ...theme('colors'),
+      'rust': "#e56034"
+    }),
+    minWidth: {
+      'project-card-mobile': "320px",
+      'project-card': "420px"
+    },
     extend: {
       colors:{
         header: "#E8C64E"
@@ -19,7 +27,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+  ],
   corePlugins: {
    backgroundImage: true,
   }
