@@ -1,5 +1,9 @@
 use yew::prelude::*;
-use crate::components::{header::Header,hero::Hero, joinus::JoinUS, about::About, our_projects::OurProjects};
+use crate::components::header::Header;
+use crate::components::hero::Hero;
+use crate::components::joinus::JoinUs;
+use crate::components::about::About;
+use crate::components::our_projects::OurProjects;
 
 pub struct App {}
 
