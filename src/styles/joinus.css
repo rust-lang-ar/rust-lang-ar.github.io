@@ -9,7 +9,7 @@
         @apply md:w-1/2 md:pl-12 md:py-8 mb-10 md:mb-0 pb-10 inline-flex items-start flex-col;
     }
     .joinus-side-container{
-        @apply flex flex-col items-center;
+        @apply flex flex-col items-center text-center;
     }
 
 }
