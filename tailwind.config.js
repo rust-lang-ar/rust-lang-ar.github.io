@@ -10,17 +10,16 @@ module.exports = {
       ...theme('colors'),
       'rust': "#e56034"
     }),
-    minWidth: {
-      'project-card-mobile': "320px",
-      'project-card': "420px"
-    },
     extend: {
+      screens: {
+        'xsm': '460px',
+      },
       colors:{
         header: "#E8C64E"
       },
       fontFamily:{
-        playfair: ["Playfair Display"],
-        lato: ["Lato"],
+        heading: ['Playfair Display', 'sans-serif'],
+        body: ['Lato', 'sans-serif'],
       },
     },
   },

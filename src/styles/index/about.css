@@ -12,10 +12,10 @@
         @apply px-12;
     }
     .about-description{
-        @apply py-6 text-xl font-playfair;
+        @apply py-6 text-xl font-heading;
     }
     .about-action{
-        @apply text-4xl font-playfair underline font-bold;
+        @apply text-4xl font-heading underline font-bold;
     }
 
 }

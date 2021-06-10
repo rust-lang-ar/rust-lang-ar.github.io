@@ -1,9 +1,9 @@
-@import "./header.css";
-@import "./hero.css";
-@import "./about.css";
-@import "./joinus.css";
-@import "./project_card.css";
-@import "./our_projects.css";
+@import "./index/hero.css";
+@import "./index/about.css";
+@import "./index/joinus.css";
+@import "./index/project_card.css";
+@import "./index/our_projects.css";
+@import "./layout/header.css";
 
 @tailwind base;
 @tailwind components;

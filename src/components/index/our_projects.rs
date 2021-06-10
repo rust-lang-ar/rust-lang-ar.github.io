@@ -1,14 +1,15 @@
-use yew::{html, Component, ComponentLink, Html, ShouldRender};
-use yew::services::fetch::{FetchService, FetchTask, Request, Response};
-use super::{project_card::{ProjectCard}};
-use yew::services::ConsoleService;
-use yew::format::Nothing;
 use anyhow::Error;
 use serde::Deserialize;
+use yew::format::Nothing;
+use yew::prelude::*;
+use yew::services::fetch::{FetchService, FetchTask, Request, Response};
+use yew::services::ConsoleService;
+
+use super::project_card::ProjectCard;
+
 
 const GITHUB_REPOS_URL: &str = "https://api.github.com/orgs/rust-lang-ar/repos";
 
-  
 pub struct OurProjects {
     is_fetching: bool,
     fetch_failed: bool,
@@ -24,7 +25,7 @@ pub struct Repository {
     pub description: String,
     pub language: Option<String>,
     pub stargazers_count: u32,
-    pub html_url: String
+    pub html_url: String,
 }
 
 pub enum Msg {
@@ -78,7 +79,7 @@ impl Component for OurProjects {
 
             let callback = self
                 .link
-                .callback(move |response: Response<Result<String, Error>> | {
+                .callback(move |response: Response<Result<String, Error>>| {
                     let (meta, body) = response.into_parts();
 
                     if meta.status.is_success() {
@@ -112,8 +113,6 @@ impl Component for OurProjects {
         }
     }
 
-    
-
     fn view(&self) -> Html {
         fn render_failed_to_fetch() -> Html {
             html! {
@@ -121,12 +120,17 @@ impl Component for OurProjects {
             }
         }
 
-        fn render_repo(name: &str, description: &str, language: &Option<String>, stargazers_count:u32, html_url: &str) -> Html {
+        fn render_repo(
+            name: &str,
+            description: &str,
+            language: &Option<String>,
+            stargazers_count: u32,
+            html_url: &str,
+        ) -> Html {
             html! {
                 <ProjectCard language=language.clone() title=name text=description stargazers_count=stargazers_count html_url=html_url />
             }
         }
-
 
         if self.fetch_failed {
             render_failed_to_fetch()
@@ -160,8 +164,5 @@ impl Component for OurProjects {
                 </section>
             }
         }
-
-
-       
     }
 }

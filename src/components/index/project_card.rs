@@ -1,12 +1,12 @@
-use yew::{html, Component, ComponentLink, Html, Properties, ShouldRender};
+use yew::prelude::*;
 
-#[derive(Clone, Copy,PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Lang {
     Rust,
-    CSS,
+    Css,
     JavaScript,
-    HTML,
-    NoLanguage
+    Html,
+    NoLanguage,
 }
 
 impl Lang {
@@ -16,9 +16,9 @@ impl Lang {
     pub fn markup_resources(&self) -> (String, String) {
         match self {
             Lang::Rust => (String::from("rust"), String::from("Rust")),
-            Lang::CSS => (String::from("css"), String::from("CSS")),
+            Lang::Css => (String::from("css"), String::from("CSS")),
             Lang::JavaScript => (String::from("javascript"), String::from("JavaScript")),
-            Lang::HTML => (String::from("html"), String::from("HTML")),
+            Lang::Html => (String::from("html"), String::from("HTML")),
             Lang::NoLanguage => (String::default(), String::from("No language")),
         }
     }
@@ -28,9 +28,9 @@ impl From<String> for Lang {
     fn from(string: String) -> Self {
         match string.to_lowercase().as_str() {
             "rust" => Lang::Rust,
-            "html" => Lang::HTML,
+            "html" => Lang::Html,
             "javascript" => Lang::JavaScript,
-            "css" => Lang::CSS,
+            "css" => Lang::Css,
             _ => Lang::NoLanguage,
         }
     }
@@ -42,21 +42,19 @@ pub struct Props {
     pub title: String,
     pub language: Option<String>,
     pub stargazers_count: u32,
-    pub html_url: String
+    pub html_url: String,
 }
 
-pub struct ProjectCard{
+pub struct ProjectCard {
     pub description: String,
     pub language: Lang,
     pub name: String,
     pub stargazers_count: u32,
-    pub html_url: String
+    pub html_url: String,
 }
 
-pub enum Msg {}
-
 impl Component for ProjectCard {
-    type Message = Msg;
+    type Message = ();
     type Properties = Props;
 
     fn create(props: Self::Properties, _: ComponentLink<Self>) -> Self {
@@ -71,7 +69,7 @@ impl Component for ProjectCard {
             language: lang,
             name: props.title,
             stargazers_count: props.stargazers_count,
-            html_url: props.html_url
+            html_url: props.html_url,
         }
     }
 
@@ -83,25 +81,23 @@ impl Component for ProjectCard {
         true
     }
 
-    fn rendered(&mut self, _first_render: bool) {
-
-    }
+    fn rendered(&mut self, _first_render: bool) {}
 
     fn view(&self) -> Html {
         let (_class_name, language_text) = self.language.markup_resources();
 
         html! {
             <a href={self.html_url.clone()} class="h-full">
-            <button class="project-card-container">
-                <h2 class="project-card-header">{ self.name.clone() }</h2>
-                <p class="project-card-description">{ self.description.clone() }</p>
-                <div class="project-card-footer">
-                    <div class="h-5">
-                        <div class="project-card-lang-circle"></div>
+                <button class="project-card-container">
+                    <h2 class="project-card-header">{ self.name.clone() }</h2>
+                    <p class="project-card-description">{ self.description.clone() }</p>
+                    <div class="project-card-footer">
+                        <div class="h-5">
+                            <div class="project-card-lang-circle"></div>
+                        </div>
+                        <p>{language_text}</p>
                     </div>
-                    <p>{language_text}</p>
-                </div>
-            </button>
+                </button>
             </a>
         }
     }

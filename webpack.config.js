@@ -52,7 +52,6 @@ module.exports = (_, argv) => {
       new CopyWebpackPlugin({
         patterns: [
           { from: './static', to: distPath },
-          { from: './src/img', to: distPath+'/images' },
           { from: './static', to: distPath+'/images' },
         ],
       }),

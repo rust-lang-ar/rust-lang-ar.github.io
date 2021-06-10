@@ -6,7 +6,7 @@
         line-height: 0.5;
     }
     .our-projects-title{
-        @apply text-3xl md:text-4xl font-lato font-bold;
+        @apply text-3xl md:text-4xl font-body font-bold;
         display: inline-block;
         position: relative;  
     }
@@ -22,6 +22,12 @@
         margin-right: 15px;
     }
     .our-projects-list-of-repositories{
-        @apply grid grid-flow-col auto-cols-min items-center justify-between gap-3 p-4 overflow-x-auto scroll-snap-x;
+        @apply grid grid-flow-col auto-cols-min items-center justify-between gap-3 overflow-x-auto scroll-snap-x;
+    }
+
+    @screen md{
+        .our-projects-list-of-repositories{
+            @apply p-4;
+        }
     }
 }

@@ -11,7 +11,7 @@
     }
 
     .header-right-side{
-        @apply md:ml-auto text-xl flex flex-wrap items-center text-base justify-center font-lato;
+        @apply md:ml-auto text-xl flex flex-wrap items-center text-base justify-center font-body;
     }
 
     .header-nav-item{
@@ -19,7 +19,7 @@
     }
 
     .header-title{
-        @apply md:ml-3 text-2xl md:text-4xl font-playfair text-center md:text-justify;
+        @apply md:ml-3 text-2xl md:text-4xl font-heading text-center md:text-justify;
         min-width: 100%;
     }
 

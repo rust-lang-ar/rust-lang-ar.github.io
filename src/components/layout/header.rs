@@ -1,15 +1,13 @@
-use yew::{html, Component, ComponentLink, Html, ShouldRender};
+use yew::prelude::*;
 
 pub struct Header {}
 
-pub enum Msg {}
-
 impl Component for Header {
-    type Message = Msg;
+    type Message = ();
     type Properties = ();
 
     fn create(_props: Self::Properties, _: ComponentLink<Self>) -> Self {
-        Header { }
+        Header {}
     }
 
     fn update(&mut self, _msg: Self::Message) -> ShouldRender {
