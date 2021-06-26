@@ -10,10 +10,8 @@ readme = "README.md"
 repository = "https://github.com/rust-lang-ar/rust-lang-ar.github.io"
 version = "0.1.0"
 
-[lib]
-crate-type = ["cdylib"]
-
 [dependencies]
-wasm-bindgen = "^0.2"
-yew = "0.17"
-
+console_error_panic_hook = "0.1.6"
+wasm-bindgen = "0.2.74"
+wee_alloc = "0.4.5"
+yew = "0.17.3"
