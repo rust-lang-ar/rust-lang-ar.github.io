@@ -1,1 +1,39 @@
-/* Components Style Sheets must be imported here */
+@import "./index/hero.css";
+@import "./index/about.css";
+@import "./index/joinus.css";
+@import "./index/project_card.css";
+@import "./index/our_projects.css";
+@import "./layout/header.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind aspect-ratio;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+.bg-general{
+    background: url('https://i.imgur.com/tLt6Zo6.png'), #F4A55D;
+    min-height: 100vh;
+}
+
+.aspect-ratio{
+    aspect-ratio: auto 16/9;
+}
+
+  @layer utilities {
+    .scroll-snap-none {
+      scroll-snap-type: none;
+    }
+    .scroll-snap-x {
+      scroll-snap-type: x mandatory;
+    }
+    .scroll-snap-x > div{
+        scroll-snap-align: center;
+    }
+    .scroll-snap-y {
+      scroll-snap-type: y;
+    }
+  }

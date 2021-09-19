@@ -127,8 +127,11 @@ impl Component for OurProjects {
             stargazers_count: u32,
             html_url: &str,
         ) -> Html {
+            let title2 = name.clone().to_string();
+            let description2 = description.clone().to_string();
+            let html_url2 = html_url.clone().to_string();
             html! {
-                <ProjectCard language=language.clone() title=name text=description stargazers_count=stargazers_count html_url=html_url />
+                <ProjectCard language=language.clone() title=title2 text=description2 stargazers_count=stargazers_count html_url=html_url2 />
             }
         }
 

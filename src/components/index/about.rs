@@ -1,4 +1,5 @@
 use yew::prelude::*;
+use crate::router::{AppAnchor, AppRoute, AppRouter, PublicUrlSwitch};
 
 pub struct About {}
 
@@ -30,9 +31,9 @@ impl Component for About {
                         <br/>
                         {"Dando clases en Facultades y acercando oradores del exterior para dar charlas y conocer a la comunidad."}
                     </p>
-                    <button class="about-action">
-                        {"Acerca"}
-                    </button>
+                    <AppAnchor classes="about-action" route=AppRoute::About>
+                                {"Acerca"}
+                    </AppAnchor>
                 </div>
             </section>
         }

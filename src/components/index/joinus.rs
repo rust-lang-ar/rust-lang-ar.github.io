@@ -24,7 +24,7 @@ impl Component for JoinUs {
                 <div class="joinus-left-side">
                     <div class="joinus-side-container">
                         <div class="icon-container">
-                            <img src="fa-brands_meetup.svg" />
+                            <img src="images/fa-brands_meetup.svg" />
                         </div>
                         {"¡Nuestro grupo de meetup!"}
                     </div>
@@ -32,7 +32,7 @@ impl Component for JoinUs {
                 <div class="joinus-right-side">
                     <div class="joinus-side-container">
                         <div class="icon-container">
-                            <img src="fa-brands_telegram.svg" />
+                            <img src="images/fa-brands_telegram.svg" />
                         </div>
                         {"¡Nuestro grupo de Telegram!"}
                     </div>

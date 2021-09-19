@@ -1,26 +1,41 @@
-use crate::components::index::about::About;
-use crate::components::index::hero::Hero;
-use crate::components::index::joinus::JoinUs;
-use crate::components::index::our_projects::OurProjects;
 use crate::components::layout::header::Header;
+use crate::components::layout::footer::Footer;
+use crate::pages::index::Index;
+use crate::pages::about::About;
 
 use yew::prelude::*;
+use crate::router::{AppAnchor, AppRoute, AppRouter, PublicUrlSwitch};
 
-pub struct App {}
+pub struct App {
+    link: ComponentLink<Self>,
+    navbar_active: bool,
+}
+
+pub enum Msg {
+    ToggleNavbar,
+}
 
 impl Component for App {
-    type Message = ();
+    type Message = Msg;
     type Properties = ();
 
-    fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
-        App {}
+    fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
+        Self {
+            link,
+            navbar_active: false,
+        }
     }
 
-    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
-        true
+    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+        match msg {
+            Msg::ToggleNavbar => {
+                self.navbar_active = !self.navbar_active;
+                true
+            }
+        }
     }
 
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
+    fn change(&mut self, _props: Self::Properties) -> ShouldRender {
         false
     }
 
@@ -28,11 +43,24 @@ impl Component for App {
         html! {
           <div >
             <Header />
-            <Hero />
-            <JoinUs />
-            <About />
-            <OurProjects />
+                    <AppRouter
+                    render=AppRouter::render(Self::switch)
+                />
+            <Footer />
           </div>
+        }
+    }
+}
+
+
+impl App {
+    fn switch(switch: PublicUrlSwitch) -> Html {
+        match switch.route() {
+            AppRoute::About => 
+                html! { <About /> },
+            AppRoute::Index => {
+                html! { <Index /> }
+            }
         }
     }
 }

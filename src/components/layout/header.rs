@@ -1,4 +1,5 @@
 use yew::prelude::*;
+use crate::router::{AppAnchor, AppRoute, AppRouter, PublicUrlSwitch};
 
 pub struct Header {}
 
@@ -20,14 +21,16 @@ impl Component for Header {
 
     fn view(&self) -> Html {
         html! {
-            <header class="header">
-                <div class="header-container">
-                    <a class="header-left-side">
-                        <img class="header-logo" src="rust-lang-ar-logo.png" />
+            <header class=classes!("header")>
+                <div class=classes!("header-container")>
+                    <AppAnchor classes="header-left-side" route=AppRoute::Index>
+                        <img class="header-logo" src="images/rust-lang-ar-logo.png" />
                         <h2 class="header-title">{"Rust Argentina"}</h2>
-                    </a>
+                    </AppAnchor>
                     <nav class="header-right-side">
-                        <a class="header-nav-item">{"Acerca"}</a>
+                        <AppAnchor classes="header-nav-item" route=AppRoute::About>
+                            {"Acerca"}
+                        </AppAnchor>
                         <a class="header-nav-item">{"Eventos"}</a>
                         <a class="header-nav-item">{"Guía de Recursos"}</a>
                     </nav>

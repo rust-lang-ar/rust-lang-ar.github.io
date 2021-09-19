@@ -3,6 +3,7 @@
 @import "./index/joinus.css";
 @import "./index/project_card.css";
 @import "./index/our_projects.css";
+@import "./index/our_members.css";
 @import "./layout/header.css";
 
 @tailwind base;

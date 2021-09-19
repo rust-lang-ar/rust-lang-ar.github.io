@@ -2,31 +2,53 @@
 
 This is the source code for Rust's Argentina GitHub Page
 
-## Development
-
-The website in written using Rust's Yew framework, a front-end framework for
-creating dynamic web applications.
-
-Yew communicates with JavaScript using the WASM Bindgen, all the Rust files
-inside of the `src` directory will be compiled to a single WASM file.
-
-Webpack is used to build such bundle contaning:
-
-1. The WASM build
-2. A JavaScript file in charge of loading WASM into the browser.
-3. All the CSS in bundled into the output `website.js`
-4. Copies the HTML file located in the `static` directory to the `dist` directory
-
 ### Requirements
 
-- NodeJS
 - Rust
+- NodeJS
+
+This solution makes use of Trunk for development and bundling you must
+install `trunk` in your system first.
+
+Follow the documentation available in the official [Trunk](https://github.com/thedodd/trunk)
+repository.
+
+Then make sure you have the WASM target installed otherwise
+add it to your Rust targets using:
+
+```bash
+rustup target add wasm32-unknown-unknown
+```
+
+Finally give a try on the build by running one of the following commands:
+
+
+```bash
+# If you are a Yarn user
+yarn install && yarn build
+```
+
+```bash
+# If you are a NPM user (Just installed NodeJS)
+
+# Its important to note that this project relies on Yarn
+# to lock dependencies
+
+npm install && npm run build
+```
+
+```bash
+# Or you can use NPX instead
+npx tailwindcss -o src/styles/tailwind.css && trunk build
+```
+
+## Development
 
 #### Why do I need NodeJS?
 
-NodeJS is used to run `yarn` which is a package manager in NodeJS-land.
-With `yarn` we install webpack which is our bundler for this project and makes
-the bundle job we can check on the `webpack.config.js` file.
+NodeJS is used to have TailwindCSS support in this project. You must
+install it to use the generated stylesheet and follow the project style
+configurations.
 
 #### Why do I need Rust?
 
@@ -39,8 +61,8 @@ and compiled to WASM.
 
 Script | Description
 --- | ---
-`yarn dev` | Runs WebpackJS server on development mode
-`yarn build` | Builds Rust into WASM and creates a bundle on `dist/` directory
+`yarn build` | Builds TailwindCSS styles and bundles the website under `dist/` directory
+`yarn dev` | Builds TailwindCSS styles and executes Trunk's development server
 
 ## Contributing
 

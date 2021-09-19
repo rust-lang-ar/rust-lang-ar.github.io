@@ -1,6 +1,8 @@
 @layer components {
     .our-projects-section{
         @apply my-16 py-16 mx-0 sm:px-5 lg:px-20 items-center;
+        margin-bottom:1rem;
+        padding-bottom: 0;
     }
     .our-projects-title-container{
         line-height: 0.5;

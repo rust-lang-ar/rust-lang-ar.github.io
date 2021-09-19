@@ -29,7 +29,7 @@ impl Component for Hero {
                     {"Si te interesa aprender Rust o estás llevando a cabo un proyecto con tecnología asociada, te invitamos a acercarte y participar."}
                     </h2>
                 </div>
-                <img src="Rust_Arg_web.svg" class="hero-right-side" />
+                <img src="images/rust_arg_web.svg" class="hero-right-side" />
             </main>
         }
     }
