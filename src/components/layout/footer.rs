@@ -33,10 +33,14 @@ impl Component for Footer {
                             </AppAnchor>
                         </li>
                         <li class="my-2">
-                            <a class="font-heading text-gray-600 hover:text-gray-800">{"Eventos"}</a>
+                            <AppAnchor classes="font-heading text-gray-600 hover:text-gray-800" route=AppRoute::Events>
+                                {"Eventos"}
+                            </AppAnchor>
                         </li>
                         <li class="my-2">
-                            <a class="font-heading text-gray-600 hover:text-gray-800">{"Guia de Recursos"}</a>
+                            <AppAnchor classes="font-heading text-gray-600 hover:text-gray-800" route=AppRoute::Resources>
+                                {"Guia de Recursos"}
+                            </AppAnchor>
                         </li>
                     </nav>
                 </div>

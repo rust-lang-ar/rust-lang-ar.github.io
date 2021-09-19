@@ -34,8 +34,10 @@ impl Component for Header {
                         <AppAnchor classes="header-nav-item" route=AppRoute::Events>
                             {"Eventos"}
                         </AppAnchor>
-                        <a class="header-nav-item">{"Guía de Recursos"}</a>
-                    </nav>
+                        <AppAnchor classes="header-nav-item" route=AppRoute::Resources>
+                            {"Guía de Recursos"}
+                        </AppAnchor>
+                        </nav>
                 </div>
             </header>
         }

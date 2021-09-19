@@ -3,6 +3,7 @@ use crate::components::layout::footer::Footer;
 use crate::pages::index::Index;
 use crate::pages::about::About;
 use crate::pages::events::Events;
+use crate::pages::resources::Resources;
 
 use yew::prelude::*;
 use crate::router::{AppAnchor, AppRoute, AppRouter, PublicUrlSwitch};
@@ -57,6 +58,8 @@ impl Component for App {
 impl App {
     fn switch(switch: PublicUrlSwitch) -> Html {
         match switch.route() {
+            AppRoute::Resources => 
+                html! { <Resources /> },
             AppRoute::Events => 
                 html! { <Events /> },
             AppRoute::About => 
