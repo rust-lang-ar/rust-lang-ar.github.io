@@ -1,6 +1,9 @@
 #![recursion_limit = "1024"]
 
 mod app;
+pub mod components;
+pub mod pages;
+pub mod router;
 
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;

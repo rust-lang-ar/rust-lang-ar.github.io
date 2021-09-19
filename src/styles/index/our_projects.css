@@ -1,0 +1,35 @@
+@layer components {
+    .our-projects-section{
+        @apply my-16 py-16 mx-0 sm:px-5 lg:px-20 items-center;
+        margin-bottom:1rem;
+        padding-bottom: 0;
+    }
+    .our-projects-title-container{
+        line-height: 0.5;
+    }
+    .our-projects-title{
+        @apply text-3xl md:text-4xl font-body font-bold;
+        display: inline-block;
+        position: relative;  
+    }
+    .our-projects-title:before{
+        content: "";
+        position: absolute;
+        height: 1px;
+        border-bottom: 2px solid black;
+        border-top: 2px solid black;
+        top: 50%;
+        width: 600px;
+        right: 100%;
+        margin-right: 15px;
+    }
+    .our-projects-list-of-repositories{
+        @apply grid grid-flow-col auto-cols-min items-center justify-between gap-3 overflow-x-auto scroll-snap-x;
+    }
+
+    @screen md{
+        .our-projects-list-of-repositories{
+            @apply p-4;
+        }
+    }
+}

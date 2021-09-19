@@ -1,0 +1,48 @@
+@layer components {
+    .events-section{
+        @apply my-16 mx-0 sm:px-5 lg:px-20 items-center;
+        margin-bottom:1rem;
+        padding-bottom: 0;
+    }
+    .events-title-container{
+        line-height: 0.5;
+    }
+    .events-title{
+        @apply text-3xl md:text-4xl font-body font-bold;
+        display: inline-block;
+        position: relative;  
+    }
+    .events-title:before{
+        content: "";
+        position: absolute;
+        height: 1px;
+        border-bottom: 2px solid black;
+        border-top: 2px solid black;
+        top: 50%;
+        width: 600px;
+        right: 100%;
+        margin-right: 15px;
+    }
+
+    .events-container-list{
+        @apply container px-5 py-4 mx-auto;
+    }
+    .events-container{
+        @apply md:py-5 mx-0 grid md:grid-cols-2 sm:gap-8 items-center;
+    }
+    .event-title{
+        @apply text-2xl font-bold;
+    }
+    .event-text{
+        @apply font-heading;
+    }
+    .event-sign-up{
+        @apply event-title event-text underline;
+    }
+
+    .events-left-side{
+    }
+    .events-right-side{
+        @apply px-12;
+    }
+}
