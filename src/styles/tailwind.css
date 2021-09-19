@@ -6,6 +6,7 @@
 @import "./index/our_members.css";
 @import "./layout/header.css";
 @import "./events/events.css";
+@import "./resources/resources.css";
 
 @tailwind base;
 @tailwind components;

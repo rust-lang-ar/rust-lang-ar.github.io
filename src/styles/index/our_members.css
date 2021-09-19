@@ -4,17 +4,22 @@
         margin-bottom:1rem;
     }
     .our-members-list{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-gap: 1rem;
         @apply mx-0 items-center;
         padding:1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
     }
     .our-members-list .contributor{
         display: flex;
         flex-direction: column;
         align-items: center;
         height: 100%;
+        width: 250px;
+        height: 400px;
     }
     .contributor h1{
         @apply text-2xl font-bold;
