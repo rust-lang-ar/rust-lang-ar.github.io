@@ -12,7 +12,7 @@ const GITHUB_REPOS_URL: &str = "https://api.github.com/orgs/rust-lang-ar/repos";
 pub struct OurProjects {
     is_fetching: bool,
     fetch_failed: bool,
-    _fetch_task: Option<FetchTask>,
+    fetch_task: Option<FetchTask>,
     has_repos: bool,
     link: ComponentLink<Self>,
     repositories: Option<Vec<Repository>>,
@@ -40,7 +40,7 @@ impl Component for OurProjects {
         Self {
             is_fetching: false,
             fetch_failed: false,
-            _fetch_task: None,
+            fetch_task: None,
             has_repos: false,
             link,
             repositories: None,
@@ -108,7 +108,7 @@ impl Component for OurProjects {
             let request = Request::get(GITHUB_REPOS_URL).body(Nothing).unwrap();
 
             let task = FetchService::fetch(request, callback).unwrap();
-            self._fetch_task = Some(task);
+            self.fetch_task = Some(task);
         }
     }
 

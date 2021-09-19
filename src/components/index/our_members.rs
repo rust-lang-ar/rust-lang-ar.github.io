@@ -6,7 +6,6 @@ use yew::prelude::*;
 use yew::services::fetch::{FetchService, FetchTask, Request, Response};
 use yew::services::ConsoleService;
 
-/// URL to fetch members for **rust-lang-ve** organization from GitHub
 const GITHUB_MEMBERS_URL: &str = "https://api.github.com/orgs/rust-lang-ar/members";
 
 #[derive(Deserialize, Debug)]
