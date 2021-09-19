@@ -1,4 +1,4 @@
+pub mod events;
 pub mod index;
 pub mod layout;
-pub mod events;
 pub mod resources;

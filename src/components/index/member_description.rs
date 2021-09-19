@@ -23,7 +23,7 @@ pub struct MemberDescription {
     has_member: bool,
     link: ComponentLink<Self>,
     member: Option<User>,
-    user_url: String
+    user_url: String,
 }
 
 pub enum Msg {
@@ -43,7 +43,7 @@ impl Component for MemberDescription {
             has_member: false,
             link,
             member: None,
-            user_url: prop.user_url
+            user_url: prop.user_url,
         }
     }
 
@@ -115,7 +115,7 @@ impl Component for MemberDescription {
         } else if !self.is_fetching && self.has_member {
             match &self.member {
                 Some(member) => {
-                    fn render_description(member:&User) -> Html {
+                    fn render_description(member: &User) -> Html {
                         let bio = match &member.bio {
                             Some(bio) => bio,
                             None => "",
@@ -130,7 +130,7 @@ impl Component for MemberDescription {
                         }
                     }
                     html! {{
-                        render_description(&member)
+                        render_description(member)
                     }}
                 }
                 _ => Html::default(),

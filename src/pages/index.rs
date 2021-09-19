@@ -1,10 +1,8 @@
 use crate::components::index::about::About;
 use crate::components::index::hero::Hero;
 use crate::components::index::joinus::JoinUs;
-use crate::components::index::our_projects::OurProjects;
 use crate::components::index::our_members::OutMembers;
-use crate::components::layout::header::Header;
-use crate::components::layout::footer::Footer;
+use crate::components::index::our_projects::OurProjects;
 
 use yew::prelude::*;
 

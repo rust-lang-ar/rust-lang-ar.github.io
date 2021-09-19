@@ -1,5 +1,4 @@
 use yew::prelude::*;
-use yew::{html, Children, Component, Html, Properties};
 
 pub struct Category {
     link: ComponentLink<Self>,
@@ -30,7 +29,7 @@ impl Component for Category {
         }
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
         self.value = !self.value;
         true
     }
@@ -40,15 +39,14 @@ impl Component for Category {
     }
 
     fn view(&self) -> Html {
-        fn render_if_true(value:&bool, props:&ListProps) -> Html {
+        fn render_if_true(value: &bool, props: &ListProps) -> Html {
             if *value {
                 html! {
                     <div class="list">
                         { for props.children.iter() }
                     </div>
                 }
-            }
-            else {
+            } else {
                 html! {}
             }
         }

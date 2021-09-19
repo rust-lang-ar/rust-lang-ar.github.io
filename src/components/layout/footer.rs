@@ -1,5 +1,5 @@
+use crate::router::{AppAnchor, AppRoute};
 use yew::prelude::*;
-use crate::router::{AppAnchor, AppRoute, AppRouter, PublicUrlSwitch};
 
 pub struct Footer {}
 

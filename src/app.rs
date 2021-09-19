@@ -1,40 +1,25 @@
-use crate::components::layout::header::Header;
 use crate::components::layout::footer::Footer;
-use crate::pages::index::Index;
+use crate::components::layout::header::Header;
 use crate::pages::about::About;
 use crate::pages::events::Events;
+use crate::pages::index::Index;
 use crate::pages::resources::Resources;
 
+use crate::router::{AppRoute, AppRouter, PublicUrlSwitch};
 use yew::prelude::*;
-use crate::router::{AppAnchor, AppRoute, AppRouter, PublicUrlSwitch};
 
-pub struct App {
-    link: ComponentLink<Self>,
-    navbar_active: bool,
-}
-
-pub enum Msg {
-    ToggleNavbar,
-}
+pub struct App {}
 
 impl Component for App {
-    type Message = Msg;
+    type Message = ();
     type Properties = ();
 
-    fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self {
-            link,
-            navbar_active: false,
-        }
+    fn create(_: Self::Properties, _link: ComponentLink<Self>) -> Self {
+        Self {}
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
-        match msg {
-            Msg::ToggleNavbar => {
-                self.navbar_active = !self.navbar_active;
-                true
-            }
-        }
+    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
+        false
     }
 
     fn change(&mut self, _props: Self::Properties) -> ShouldRender {
@@ -54,16 +39,12 @@ impl Component for App {
     }
 }
 
-
 impl App {
     fn switch(switch: PublicUrlSwitch) -> Html {
         match switch.route() {
-            AppRoute::Resources => 
-                html! { <Resources /> },
-            AppRoute::Events => 
-                html! { <Events /> },
-            AppRoute::About => 
-                html! { <About /> },
+            AppRoute::Resources => html! { <Resources /> },
+            AppRoute::Events => html! { <Events /> },
+            AppRoute::About => html! { <About /> },
             AppRoute::Index => {
                 html! { <Index /> }
             }

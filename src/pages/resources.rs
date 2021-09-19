@@ -1,6 +1,5 @@
-
-use yew::prelude::*;
 use crate::components::resources::category::Category;
+use yew::prelude::*;
 
 pub struct Resources {}
 
@@ -34,7 +33,7 @@ impl Component for Resources {
                         <a href="https://doc.rust-lang.org/book/">{"The Rust Programming Language"}</a>
                         <p>{"El punto de inicio de toda la documentacion oficial se encuentra "}
                         <a href="https://www.rust-lang.org/learn">{"aqui"}</a>
-                        {". De particular interes inmediato a principiantes es la documentación de la"} 
+                        {". De particular interes inmediato a principiantes es la documentación de la"}
                         <a href="https://doc.rust-lang.org/std/index.html">{"librería estandar"}</a>
                         {" y la documentación de "}
                         <a href="https://doc.rust-lang.org/cargo/index.html">{"Cargo"}</a>
@@ -58,7 +57,7 @@ impl Component for Resources {
                     </Category>
                     <br/>
                     <p>{"No todas las personas tienen el mismo estilo de aprendizaje, y algunas prefieren el formato audiovisual.
-El equipo de desarrollo de Rust tiene un canal oficial en "}
+        El equipo de desarrollo de Rust tiene un canal oficial en "}
                     <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA">{"Youtube"}</a>
                     {" y "}
                     <a href="https://www.youtube.com/playlist?list=PLLqEtX6ql2EyPAZ1M2_C0GgVd4A-_L4_5">{"esta serie de videos"}</a>

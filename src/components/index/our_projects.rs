@@ -7,7 +7,6 @@ use yew::services::ConsoleService;
 
 use super::project_card::ProjectCard;
 
-
 const GITHUB_REPOS_URL: &str = "https://api.github.com/orgs/rust-lang-ar/repos";
 
 pub struct OurProjects {
@@ -127,11 +126,8 @@ impl Component for OurProjects {
             stargazers_count: u32,
             html_url: &str,
         ) -> Html {
-            let title2 = name.clone().to_string();
-            let description2 = description.clone().to_string();
-            let html_url2 = html_url.clone().to_string();
             html! {
-                <ProjectCard language=language.clone() title=title2 text=description2 stargazers_count=stargazers_count html_url=html_url2 />
+                <ProjectCard language=language.clone() title=name.to_string() text=description.to_string() stargazers_count=stargazers_count html_url=html_url.to_string() />
             }
         }
 

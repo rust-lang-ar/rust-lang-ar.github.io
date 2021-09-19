@@ -1,10 +1,10 @@
+use super::member_description::MemberDescription;
 use anyhow::Error;
 use serde::Deserialize;
 use yew::format::Nothing;
 use yew::prelude::*;
 use yew::services::fetch::{FetchService, FetchTask, Request, Response};
 use yew::services::ConsoleService;
-use super::member_description::MemberDescription;
 
 /// URL to fetch members for **rust-lang-ve** organization from GitHub
 const GITHUB_MEMBERS_URL: &str = "https://api.github.com/orgs/rust-lang-ar/members";
@@ -33,8 +33,6 @@ pub enum Msg {
 impl Component for OutMembers {
     type Message = Msg;
     type Properties = ();
-
-
 
     fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
         Self {
@@ -120,23 +118,19 @@ impl Component for OutMembers {
                     fn render_member(login: &str, avatar_url: &str, user_url: &str) -> Html {
                         let alt_text = format!("{} GitHub Profile Picture", login);
                         let user_profile_url = format!("https://github.com/{}", login);
-                        let algo = avatar_url.to_string();
-                        let otro = alt_text.to_string();
-                        let user_url2 = user_url.to_string();
-                        
 
                         html! {
                           <li class="contributor">
                             <a href=user_profile_url.to_string() target="_blank">
                               <img
-                                src=algo
-                                alt=otro
+                                src=avatar_url.to_string()
+                                alt=alt_text
                                 class="rounded-full"
                                 height="260"
                                 width="260"
                               />
                             </a>
-                            <MemberDescription user_url=user_url2 />
+                            <MemberDescription user_url=user_url.to_string() />
                           </li>
                         }
                     }
