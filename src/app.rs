@@ -2,6 +2,7 @@ use crate::components::layout::header::Header;
 use crate::components::layout::footer::Footer;
 use crate::pages::index::Index;
 use crate::pages::about::About;
+use crate::pages::events::Events;
 
 use yew::prelude::*;
 use crate::router::{AppAnchor, AppRoute, AppRouter, PublicUrlSwitch};
@@ -43,8 +44,8 @@ impl Component for App {
         html! {
           <div >
             <Header />
-                    <AppRouter
-                    render=AppRouter::render(Self::switch)
+                <AppRouter
+                render=AppRouter::render(Self::switch)
                 />
             <Footer />
           </div>
@@ -56,6 +57,8 @@ impl Component for App {
 impl App {
     fn switch(switch: PublicUrlSwitch) -> Html {
         match switch.route() {
+            AppRoute::Events => 
+                html! { <Events /> },
             AppRoute::About => 
                 html! { <About /> },
             AppRoute::Index => {
