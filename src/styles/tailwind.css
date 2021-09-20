@@ -13,13 +13,36 @@
 @tailwind utilities;
 @tailwind aspect-ratio;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Lato-Regular.ttf") format('truetype');
+}
 
-.bg-general{
-    background: url('https://i.imgur.com/tLt6Zo6.png'), #F4A55D;
-    min-height: 100vh;
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/Lato-Bold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/PlayfairDisplay-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/PlayfairDisplay-Bold.ttf") format('truetype');
 }
 
 .aspect-ratio{
