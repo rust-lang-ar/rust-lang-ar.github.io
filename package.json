@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "tailwindcss -o src/styles/tailwind.css && trunk build",
+    "build": "npm run build:css && trunk build",
     "dev": "npm run build:css && trunk serve",
     "build:css": "postcss src/styles/tailwind.css -o static/dist/tailwind.css"
   },
