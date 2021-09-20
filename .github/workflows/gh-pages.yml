@@ -18,9 +18,14 @@ jobs:
           toolchain: stable
           override: true
 
+      - name: Setup "wasm32-unknown-unknown" target
+        run: rustup target add wasm32-unknown-unknown
+
+      - name: Setup "wasm-bindgen-cli"
+        run: cargo install wasm-bindgen-cli
+
       - name: Install Trunk
-        run: wget -qO- https://github.com/thedodd/trunk/releases/download/v0.11.0/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
-        # https://github.com/thedodd/trunk#install
+        run: cargo install --locked trunk
 
       - name: Build
         run: |
