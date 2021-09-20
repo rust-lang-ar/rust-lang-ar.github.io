@@ -24,10 +24,10 @@ impl Component for JoinUs {
                 <div class="joinus-left-side">
                     <div class="joinus-side-container">
                         <div class="icon-container">
-                        <a href="https://www.meetup.com/es-ES/Rust-Argentina/" target="_blank">
-                        <img src="images/fa-brands_meetup.svg" />
+                            <a href="https://www.meetup.com/es-ES/Rust-Argentina/" target="_blank">
+                                <img src="images/fa-brands_meetup.svg" class="join-us-meetup-icon" alt="Meetup Icon" />
                             </a>
-                            </div>
+                        </div>
                         <a href="https://www.meetup.com/es-ES/Rust-Argentina/" target="_blank">
                         {"¡Nuestro grupo de meetup!"}
                         </a>
@@ -35,9 +35,9 @@ impl Component for JoinUs {
                 </div>
                 <div class="joinus-right-side">
                     <div class="joinus-side-container">
-                    <div class="icon-container">
-                        <a href="https://t.me/rust_lang_ar" target="_blank">
-                            <img src="images/fa-brands_telegram.svg" />
+                        <div class="icon-container">
+                            <a href="https://t.me/rust_lang_ar" target="_blank">
+                                <img src="images/fa-brands_telegram.svg" class="join-us-telegram-icon" alt="Telegram Icon" />
                             </a>
                         </div>
                         <a href="https://t.me/rust_lang_ar" target="_blank">

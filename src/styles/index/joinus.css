@@ -16,5 +16,15 @@
     }
     .icon-container{
         min-height: 76px;
+        display: flex;
+        align-items: center;
+    }
+    .join-us-telegram-icon{
+        height:64px;
+        width:62px;
+    }
+    .join-us-meetup-icon{
+        height:76px;
+        width:76px;
     }
 }
