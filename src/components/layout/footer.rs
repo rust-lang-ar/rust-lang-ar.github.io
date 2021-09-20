@@ -1,5 +1,6 @@
-use crate::router::{AppAnchor, AppRoute};
+use crate::router::AppRoute;
 use yew::prelude::*;
+use yew_router::components::RouterAnchor;
 
 pub struct Footer {}
 
@@ -28,30 +29,30 @@ impl Component for Footer {
                 <div class="lg:w-1/4 md:w-1/2 w-full px-4">
                     <nav class="list-none">
                         <li class="my-2">
-                            <AppAnchor classes="font-heading text-gray-600 hover:text-gray-800" route=AppRoute::About>
+                            <RouterAnchor<AppRoute> classes="font-heading text-gray-600 hover:text-gray-800" route=AppRoute::About>
                                 {"Acerca"}
-                            </AppAnchor>
+                            </RouterAnchor<AppRoute>>
                         </li>
                         <li class="my-2">
-                            <AppAnchor classes="font-heading text-gray-600 hover:text-gray-800" route=AppRoute::Events>
+                            <RouterAnchor<AppRoute> classes="font-heading text-gray-600 hover:text-gray-800" route=AppRoute::Events>
                                 {"Eventos"}
-                            </AppAnchor>
+                            </RouterAnchor<AppRoute>>
                         </li>
                         <li class="my-2">
-                            <AppAnchor classes="font-heading text-gray-600 hover:text-gray-800" route=AppRoute::Resources>
+                            <RouterAnchor<AppRoute> classes="font-heading text-gray-600 hover:text-gray-800" route=AppRoute::Resources>
                                 {"Guia de Recursos"}
-                            </AppAnchor>
+                            </RouterAnchor<AppRoute>>
                         </li>
                     </nav>
                 </div>
-                <AppAnchor classes="lg:w-1/4 md:w-1/2 w-full px-4 flex items-center gap-3 justify-center" route=AppRoute::Index>
+                <RouterAnchor<AppRoute> classes="lg:w-1/4 md:w-1/2 w-full px-4 flex items-center gap-3 justify-center" route=AppRoute::Index>
                     <img class="header-logo" src="images/rust-lang-ar-logo.png" />
                     <p class="font-heading text-xl text-gray-600 hover:text-gray-800">
                         {"Rust"}
                     <br class="lg:block hidden" />
                         {"Argentina"}
                     </p>
-                </AppAnchor>
+                </RouterAnchor<AppRoute>>
             </div>
           </div>
           <hr class="border-b border-gray-100" />

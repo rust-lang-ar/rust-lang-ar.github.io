@@ -1,5 +1,6 @@
-use crate::router::{AppAnchor, AppRoute};
+use crate::router::AppRoute;
 use yew::prelude::*;
+use yew_router::components::RouterAnchor;
 
 pub struct About {}
 
@@ -31,9 +32,9 @@ impl Component for About {
                         <br/>
                         {"Dando clases en Facultades y acercando oradores del exterior para dar charlas y conocer a la comunidad."}
                     </p>
-                    <AppAnchor classes="about-action" route=AppRoute::About>
+                    <RouterAnchor<AppRoute> classes="about-action" route=AppRoute::About>
                                 {"Acerca"}
-                    </AppAnchor>
+                    </RouterAnchor<AppRoute>>
                 </div>
             </section>
         }

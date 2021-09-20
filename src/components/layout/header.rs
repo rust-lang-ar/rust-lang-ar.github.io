@@ -1,5 +1,6 @@
-use crate::router::{AppAnchor, AppRoute};
+use crate::router::AppRoute;
 use yew::prelude::*;
+use yew_router::components::RouterAnchor;
 
 pub struct Header {}
 
@@ -23,21 +24,21 @@ impl Component for Header {
         html! {
             <header class=classes!("header")>
                 <div class=classes!("header-container")>
-                    <AppAnchor classes="header-left-side" route=AppRoute::Index>
+                    <RouterAnchor<AppRoute> classes="header-left-side" route=AppRoute::Index >
                         <img class="header-logo" src="images/rust-lang-ar-logo.png" />
                         <h2 class="header-title">{"Rust Argentina"}</h2>
-                    </AppAnchor>
+                    </RouterAnchor<AppRoute>>
                     <nav class="header-right-side">
-                        <AppAnchor classes="header-nav-item" route=AppRoute::About>
+                        <RouterAnchor<AppRoute> classes="header-nav-item" route=AppRoute::About>
                             {"Acerca"}
-                        </AppAnchor>
-                        <AppAnchor classes="header-nav-item" route=AppRoute::Events>
+                        </RouterAnchor<AppRoute>>
+                        <RouterAnchor<AppRoute> classes="header-nav-item" route=AppRoute::Events>
                             {"Eventos"}
-                        </AppAnchor>
-                        <AppAnchor classes="header-nav-item" route=AppRoute::Resources>
+                        </RouterAnchor<AppRoute>>
+                        <RouterAnchor<AppRoute> classes="header-nav-item" route=AppRoute::Resources>
                             {"Guía de Recursos"}
-                        </AppAnchor>
-                        </nav>
+                        </RouterAnchor<AppRoute>>
+                    </nav>
                 </div>
             </header>
         }

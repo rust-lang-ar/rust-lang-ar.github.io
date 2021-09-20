@@ -4,9 +4,9 @@ use crate::pages::about::About;
 use crate::pages::events::Events;
 use crate::pages::index::Index;
 use crate::pages::resources::Resources;
-
-use crate::router::{AppRoute, AppRouter, PublicUrlSwitch};
+use crate::router::{AppRoute};
 use yew::prelude::*;
+use yew_router::prelude::*;
 
 pub struct App {}
 
@@ -30,9 +30,9 @@ impl Component for App {
         html! {
           <div >
             <Header />
-                <AppRouter
-                render=AppRouter::render(Self::switch)
-                />
+            <Router<AppRoute, ()>
+            render = Router::render(|switch: AppRoute| Self::switch(switch))
+        />
             <Footer />
           </div>
         }
@@ -40,8 +40,8 @@ impl Component for App {
 }
 
 impl App {
-    fn switch(switch: PublicUrlSwitch) -> Html {
-        match switch.route() {
+    fn switch(switch: AppRoute) -> Html {
+        match switch {
             AppRoute::Resources => html! { <Resources /> },
             AppRoute::Events => html! { <Events /> },
             AppRoute::About => html! { <About /> },
