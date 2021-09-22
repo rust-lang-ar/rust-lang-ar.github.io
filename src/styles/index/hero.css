@@ -9,9 +9,11 @@
         @apply lg:w-1/2 w-full lg:h-auto lg:h-64 object-cover object-center rounded;
     }
     .hero-title{
-        @apply text-gray-900 text-2xl md:text-6xl font-body mb-1;
+        @apply text-gray-900 text-2xl md:text-6xl font-body mb-2 font-bold;
+        line-height: clamp(1.5rem, 3rem + 1.5385vw, 77px);
+        font-size: clamp(2rem, 1.6538rem + 1.5385vw, 3.5rem);
     }
     .hero-subtitle{
-        @apply text-2xl font-heading text-gray-500;
+        @apply text-2xl font-heading text-black;
     }
 }
