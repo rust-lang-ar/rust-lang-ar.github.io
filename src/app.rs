@@ -4,7 +4,7 @@ use crate::pages::about::About;
 use crate::pages::events::Events;
 use crate::pages::index::Index;
 use crate::pages::resources::Resources;
-use crate::router::{AppRoute};
+use crate::router::AppRoute;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
