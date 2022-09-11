@@ -1,3 +1,6 @@
+use yew::prelude::*;
+use yew_router::prelude::*;
+
 use crate::components::layout::footer::Footer;
 use crate::components::layout::header::Header;
 use crate::pages::about::About;
@@ -5,8 +8,6 @@ use crate::pages::events::Events;
 use crate::pages::index::Index;
 use crate::pages::resources::Resources;
 use crate::router::AppRoute;
-use yew::prelude::*;
-use yew_router::prelude::*;
 
 pub struct App {}
 
@@ -30,10 +31,10 @@ impl Component for App {
         html! {
           <div >
             <Header />
-            <Router<AppRoute, ()>
-            render = Router::render(Self::switch)
-        />
-            <Footer />
+        //     <Router<AppRoute, ()>
+        //     render = Router::render(Self::switch)
+        // />
+        //     <Footer />
           </div>
         }
     }
