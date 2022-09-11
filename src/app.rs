@@ -4,7 +4,7 @@ use crate::pages::about::About;
 use crate::pages::events::Events;
 use crate::pages::index::Index;
 use crate::pages::resources::Resources;
-use crate::router::{AppRoute};
+use crate::router::AppRoute;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -31,7 +31,7 @@ impl Component for App {
           <div >
             <Header />
             <Router<AppRoute, ()>
-            render = Router::render(|switch: AppRoute| Self::switch(switch))
+            render = Router::render(Self::switch)
         />
             <Footer />
           </div>
