@@ -23,25 +23,30 @@ impl Component for Header {
 
     fn view(&self) -> Html {
         html! {
-            <header class=classes!("h-20", "bg-red-200")>
-                
-                // <div class=classes!("header-container")>
-                //     <RouterAnchor<AppRoute> classes="header-left-side" route=AppRoute::Index >
-                //         <img class="header-logo" src="images/rust-lang-ar-logo.png" />
-                //         <h2 class="header-title">{"Rust Argentina"}</h2>
-                //     </RouterAnchor<AppRoute>>
-                //     <nav class="header-right-side">
-                //         <RouterAnchor<AppRoute> classes="header-nav-item" route=AppRoute::About>
-                //             {"Acerca"}
-                //         </RouterAnchor<AppRoute>>
-                //         <RouterAnchor<AppRoute> classes="header-nav-item" route=AppRoute::Events>
-                //             {"Eventos"}
-                //         </RouterAnchor<AppRoute>>
-                //         <RouterAnchor<AppRoute> classes="header-nav-item" route=AppRoute::Resources>
-                //             {"Guía de Recursos"}
-                //         </RouterAnchor<AppRoute>>
-                //     </nav>
-                // </div>
+            <header class="shadow h-20 bg-white">
+                <div class="flex items-center justify-between w-11/12 mx-auto py-2">
+                    <RouterAnchor<AppRoute> classes="flex items-center gap-4" route=AppRoute::Index >
+                        <img
+                            alt="Rust Language Argentina"
+                            class="h-16"
+                            src="images/rust-lang-ar-logo.png"
+                            height="64"
+                            width="64"
+                        />
+                        <h1>{"Rust Argentina"}</h1>
+                    </RouterAnchor<AppRoute>>
+                    <nav class="flex gap-4 w-max">
+                        <RouterAnchor<AppRoute> classes="header-nav-item" route=AppRoute::About>
+                            {"Acerca"}
+                        </RouterAnchor<AppRoute>>
+                        <RouterAnchor<AppRoute> classes="header-nav-item" route=AppRoute::Events>
+                            {"Eventos"}
+                        </RouterAnchor<AppRoute>>
+                        <RouterAnchor<AppRoute> classes="header-nav-item" route=AppRoute::Resources>
+                            {"Guía de Recursos"}
+                        </RouterAnchor<AppRoute>>
+                    </nav>
+                </div>
             </header>
         }
     }
