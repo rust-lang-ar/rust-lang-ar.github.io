@@ -36,11 +36,11 @@ impl Component for JoinUs {
                 <div class="joinus-right-side">
                     <div class="joinus-side-container">
                         <div class="icon-container">
-                            <a href="https://t.me/rust_lang_ar" target="_blank">
+                            <a href="https://t.me/rust_lang_es" target="_blank">
                                 <img src="images/fa-brands_telegram.svg" class="join-us-telegram-icon" alt="Telegram Icon" />
                             </a>
                         </div>
-                        <a href="https://t.me/rust_lang_ar" target="_blank">
+                        <a href="https://t.me/rust_lang_es" target="_blank">
                         {"¡Nuestro grupo de Telegram!"}
                         </a>
                         </div>
