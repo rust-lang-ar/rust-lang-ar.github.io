@@ -1,13 +1,80 @@
-# Sitio de la Comunidad Argentina de Rust
+# rust-lang-ar.github.io
 
-Para contribuir al sitio:
-- Crear un fork
-- Editar o crear archivos markdown en la carpeta `./src`
-- Commitear y pushear a tu fork.
-- Crear un pull request contra `development` de `https://github.com/RustArgentina/rustargentina.github.io`. Es importante que sea contra esta branch y no otra.
+This is the source code for Rust's Argentina GitHub Page
 
-## Notas
+### Requirements
 
-Github Pages, en el caso de un sitio de usuario o de organización, fuerza a que el contenido estático del sitio a deployar este en la carpeta raíz de la branch master (en el caso de sitios de proyectos, puede estar en la branch `gh-pages` o en la carpeta `./docs` de la branch `master`).
+- Rust
+- NodeJS
 
-Por esta razón, los archivos fuente del sitio están en la branch `development`, y el Github Action workflow configurado en `.github/workflow/gh-pages.yml` se encarga de preparar un entorno en el cual se puede correr `mdbook` para generar el sitio estático y commitear y pushear ese contenido a la branch `master`.
+This solution makes use of Trunk for development and bundling you must
+install `trunk` in your system first.
+
+Follow the documentation available in the official [Trunk](https://github.com/thedodd/trunk)
+repository.
+
+Then make sure you have the WASM target installed otherwise
+add it to your Rust targets using:
+
+```bash
+rustup target add wasm32-unknown-unknown
+```
+
+Finally give a try on the build by running one of the following commands:
+
+
+```bash
+# If you are a Yarn user
+yarn install && yarn build
+```
+
+```bash
+# If you are a NPM user (Just installed NodeJS)
+
+# Its important to note that this project relies on Yarn
+# to lock dependencies
+
+npm install && npm run build
+```
+
+```bash
+# Or you can use NPX instead
+npx tailwindcss -o src/styles/tailwind.css && trunk build
+```
+
+## Development
+
+#### Why do I need NodeJS?
+
+NodeJS is used to have TailwindCSS support in this project. You must
+install it to use the generated stylesheet and follow the project style
+configurations.
+
+#### Why do I need Rust?
+
+Rust is required to compile Yew framework's source code. Yew is written in Rust
+and compiled to WASM.
+
+### Scripts
+
+> In order to execute the following commands, NodeJS and `yarn` must be installed
+
+Script | Description
+--- | ---
+`yarn build` | Builds TailwindCSS styles and bundles the website under `dist/` directory
+`yarn dev` | Builds TailwindCSS styles and executes Trunk's development server
+
+## Contributing
+
+All contributions to this project are welcome! Feel free to open a Pull Request
+or Issue.
+
+## License
+
+This project is licensed under both The MIT License and The Apache License
+version 2.
+
+Refer to both licenses here:
+
+- [MIT](./LICENSE-MIT)
+- [APACHE](./LICENSE-APACHE)

@@ -1,37 +1,35 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+name: Deploy to GitHub Pages
 on:
   push:
-    branches: [development]
+    branches:
+      - main
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-18.04 # not latest because peaceiris/actions-gh-pages@v3 requires this version
+  deploy:
+    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1.1.11
+      - uses: actions-rs/toolchain@v1
         with:
-          mdbook-version: 'latest'
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: Install Trunk
+        run: wget -qO- https://github.com/thedodd/trunk/releases/download/v0.11.0/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
+        # https://github.com/thedodd/trunk#install
 
       - name: Build
-        run: mdbook build
+        run: |
+          yarn
+          yarn run build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book
-          publish_branch: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist

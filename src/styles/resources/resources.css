@@ -1,0 +1,33 @@
+@layer components {
+    .resources-section{
+        @apply my-16 mx-0 sm:px-5 lg:px-20 items-center;
+        margin-bottom:1rem;
+        padding-bottom: 0;
+    }
+    .resources-title-container{
+        line-height: 0.5;
+    }
+    .resources-title{
+        @apply text-3xl md:text-4xl font-body font-bold;
+        display: inline-block;
+        position: relative;  
+    }
+
+    .resources-container-list{
+        @apply about-container;
+        @apply container px-5 py-4 mx-auto items-start;
+    }
+    .resources-container{
+        @apply md:py-5 mx-0 grid md:grid-cols-2 sm:gap-8 items-center;
+    }
+    
+    .resources-section a{
+        @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600;
+    }
+    .category-button{
+        @apply border-gray-500 border-b-2 font-bold text-xl flex justify-between w-full;
+    }
+    .category-button img{
+        height: 1.5rem;
+    }
+}

@@ -1,0 +1,30 @@
+@layer components {
+    .joinus-container{
+        @apply container flex flex-wrap md:px-5 py-10 mx-auto items-center justify-center;
+    }
+    .joinus-left-side{
+        @apply md:w-1/2 md:py-8 xsm:border-r-4 xsm:border-b-0 mb-10 md:mb-0 pb-10 border-b border-rust inline-flex items-end flex-col;
+        @apply px-4 md:pr-12;
+    }
+
+    .joinus-right-side{
+        @apply md:w-1/2 md:py-8 mb-10 md:mb-0 pb-10 inline-flex items-start flex-col;
+        @apply px-4 md:pl-12;
+    }
+    .joinus-side-container{
+        @apply flex flex-col items-center text-center;
+    }
+    .icon-container{
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+    }
+    .join-us-telegram-icon{
+        height:64px;
+        width:62px;
+    }
+    .join-us-meetup-icon{
+        height:76px;
+        width:76px;
+    }
+}
